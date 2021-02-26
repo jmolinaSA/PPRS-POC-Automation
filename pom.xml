@@ -178,6 +178,13 @@
             <version>2.53.1</version>
         </dependency>
 
+        <!-- Deploy to Tomcat -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
