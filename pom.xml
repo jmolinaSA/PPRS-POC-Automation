@@ -187,7 +187,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
+<!--            <scope>provided</scope>-->
         </dependency>
 
         <dependency>
@@ -238,21 +238,26 @@
             <version>2.3.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
         <plugins>
-<!--            <plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                &lt;!&ndash; Clean build and startup time for Vaadin apps sometimes may exceed
-                     the default Spring Boot's 30sec timeout.  &ndash;&gt;
+                <!-- Clean build and startup time for Vaadin apps sometimes may exceed
+                     the default Spring Boot's 30sec timeout.  -->
                 <configuration>
                     <wait>500</wait>
                     <maxAttempts>240</maxAttempts>
                 </configuration>
-            </plugin>-->
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
