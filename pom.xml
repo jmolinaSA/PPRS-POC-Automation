@@ -98,6 +98,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
@@ -109,6 +110,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!-- Bean validation implementation-->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
@@ -184,11 +186,16 @@
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
     </dependencies>
 
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
+        <finalName>${artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

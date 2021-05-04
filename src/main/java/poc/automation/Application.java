@@ -9,16 +9,17 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 /**
  * The entry point of the Spring Boot application.
  */
-@SpringBootApplication(exclude = ErrorMvcAutoConfiguration.class)
-public class Application extends SpringBootServletInitializer {
 
+@SpringBootApplication(exclude = ErrorMvcAutoConfiguration.class)
+public class Application extends SpringBootServletInitializer
+{
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
     @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder){
-        return builder.sources(Application.class);
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application)
+    {
+        return application.sources(Application.class);
     }
-
 }

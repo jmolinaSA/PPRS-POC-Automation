@@ -1,5 +1,6 @@
 package Selenium;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.junit.Before;
@@ -21,6 +22,7 @@ public class SeleniumAutomatedTests
     @Before
     public void setUp()
     {
+        WebDriverManager.chromedriver().setup();
         ChromeOptions capabilities = new ChromeOptions();
         capabilities.setCapability("takesScreenshot", true);
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver/chromedriver.exe");
