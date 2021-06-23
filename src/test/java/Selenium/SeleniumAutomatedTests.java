@@ -25,8 +25,8 @@ public class SeleniumAutomatedTests
         WebDriverManager.chromedriver().setup();
         ChromeOptions capabilities = new ChromeOptions();
         capabilities.setCapability("takesScreenshot", true);
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome"); // In EC2 Instance
-//        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver/chromedriver.exe"); // Locally
+//        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome"); // In EC2 Instance
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver/chromedriver.exe"); // Locally
 
         driver = new ChromeDriver(capabilities);
         driver.manage().window().maximize();
