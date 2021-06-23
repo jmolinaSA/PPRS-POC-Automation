@@ -30,7 +30,7 @@ public class SeleniumAutomatedTests
 
         driver = new ChromeDriver(capabilities);
         driver.manage().window().maximize();
-        driver.get("http://localhost:8080/");
+        driver.get("http://localhost:8080/poc-automation/");
         takesScreenshot = (TakesScreenshot) driver;
     }
 
