@@ -13,6 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class SeleniumAutomatedTests
 {
@@ -25,12 +26,13 @@ public class SeleniumAutomatedTests
         WebDriverManager.chromedriver().setup();
         ChromeOptions capabilities = new ChromeOptions();
         capabilities.setCapability("takesScreenshot", true);
-//        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome"); // In EC2 Instance
+//        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome"); // EC2 Instance
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver/chromedriver.exe"); // Locally
 
         driver = new ChromeDriver(capabilities);
         driver.manage().window().maximize();
-        driver.get("http://localhost:8080/poc-automation/");
+//        driver.get("http://localhost:8080"); // From IntelliJ
+        driver.get("http://localhost:8080/poc-automation/"); // From Local Tomcat Server
         takesScreenshot = (TakesScreenshot) driver;
     }
 
@@ -71,7 +73,7 @@ public class SeleniumAutomatedTests
     }
 
     @Test
-    public void FilterSave() throws IOException, InterruptedException
+    public void FilterField() throws IOException, InterruptedException
     {
         WebElement filter = driver.findElement(By.name("filter"));
         filter.sendKeys("Optimal");
@@ -92,18 +94,6 @@ public class SeleniumAutomatedTests
         delete.click();
         Thread.sleep(2000);
 
-        // ASSERT
-        Assert.assertFalse(driver.getPageSource().contains("Natura"));
-    }
-
-    @Test
-    public void FilterDelete() throws IOException, InterruptedException
-    {
-        WebElement filter = driver.findElement(By.name("filter"));
-        filter.sendKeys("Natura");
-        Thread.sleep(5000);
-
-        File screenShot = takesScreenshot.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(screenShot, new File("./Screenshots/FilterTestDelete.png"));
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
 }
