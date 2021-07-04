@@ -277,6 +277,10 @@
                         <configuration>
                             <source>1.6</source>
                             <target>1.6</target>
+                            <!-- Generated file that shouldn't be included in add-ons -->
+                            <excludes>
+                                <exclude>META-INF/VAADIN/config/flow-build-info.json</exclude>
+                            </excludes>
                         </configuration>
                     </plugin>
                     <plugin>
