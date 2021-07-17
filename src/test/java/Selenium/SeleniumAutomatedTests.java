@@ -32,7 +32,8 @@ public class SeleniumAutomatedTests
         driver = new ChromeDriver(capabilities);
         driver.manage().window().maximize();
 //        driver.get("http://localhost:8080"); // From IntelliJ
-        driver.get("http://localhost:8080/poc-automation/"); // From Local Tomcat Server
+//        driver.get("http://localhost:8080/poc-automation/"); // From Local Tomcat Server
+        driver.get("http://18.118.252.234:8080/poc-automation/"); //From AWS Tomcat Server
         takesScreenshot = (TakesScreenshot) driver;
     }
 
